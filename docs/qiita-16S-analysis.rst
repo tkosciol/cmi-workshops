@@ -54,24 +54,24 @@ Before we process the data, let's have a look at the summary of the contents of 
 
 As you can see, this file contains 30 samples with between approximately 11,000 and 200,000 features, in our case, picked-OTUs (or operational taxanomic unit).
 
-Now we can begin analyzing these samples. Let’s go ahead and select "dflt_name (BIOM)" then select “Process”. This will take us to the commands selection page. Once there, the commands pull down tab can be accessed which will initially display five actions.
+Now we can begin analyzing these samples. Let’s go ahead and select "dflt_name (BIOM)" then select “Process”. This will take us to the commands selection page. Once there, the commands pull down tab can be accessed which will initially display twenty-five actions.
 
 .. figure::  images/command_options2.png
    :align:   center
 
-We will now go through the use of each command which will enable you to generate summaries, plot your data, calculate statistics to help you get the most out of your data.
+We will now go through the use of some of the most-used commands which will enable you to generate summaries, plot your data, and calculate statistics to help you get the most out of your data.
 
 Rarefying Data
 ~~~~~~~~~~~~~~
 
-To start, the data must be rarefied. This means that all the samples in the analysis will be randomly subsampled to this number of features, in this case OTUs, reducing potential alpha and beta diversity biases. Samples with fewer than this number of features will be excluded, which can also be useful for excluding things like blanks. To choose a good cutoff for your data, view the histogram that was made when we generated the summary of the data.
+For certain analyses such as those we are about to conduct, the data should be *rarefied*. This means that all the samples in the analysis will have their features, in this case OTUs, randomly subsampled to the same, desired number, reducing potential alpha and beta diversity biases. Samples with fewer than this number of features will be excluded, which can also be useful for excluding things like blanks. To choose a good cutoff for your data, view the histogram that was made when we generated the summary of the data.
 
 .. figure::  images/histogram2.png
    :align:   center
 
 An appropriate cutoff would exclude clear outliers, but retain most of the samples. Here we have already removed blanks from our data and eliminated the outliers prior to analysis so we will just use the minimum number of features observed in our samples (11030) as the cutoff.
 
-To rarefy the data, select "Rarefy features" from the drop-down menu. The parameters will appear below the workflow diagram:
+To rarefy the data, select "Rarefy table" from the drop-down menu. The parameters will appear below the workflow diagram:
 
 .. figure::  images/rarify_parameter_without_number3.png
    :align:   center
@@ -91,16 +91,16 @@ Once the job is completed, you must refresh your browser window to see the resul
 .. figure::  images/rarify_workflow3.png
    :align:   center
 
-Select the newly generated "Rarefied table 11030 (BIOM)" artifact. This time instead of seeing a histogram of the rarefied samples, you instead see a brief summary confirming that your samples have all be rarefied to the same depth. Now that the data is rarefied, we can begin the analysis.
+Select the newly generated "Rarefied table 11030 (BIOM)" artifact. This time instead of seeing a histogram of the rarefied samples, you instead see a brief summary confirming that your samples have all be rarefied to the same depth. Now that the data are rarefied, we can begin the analysis.
 
 Taxa Bar Plots
 ~~~~~~~~~~~~~~
 
-When creating a 16S closed reference BIOM table in Qiita, each sequence is matched to the Green Genes database using a 97% sequence identity threshold, and assigned a taxonomy (See this section for a `refresher on 16S data <http://cmi-workshop.readthedocs.io/en/latest/qiita-16S-processing.html>`__). This enables us to display this data to view the percentage of each taxa within each sample.
+When creating a 16S closed reference BIOM table in Qiita, each sequence is matched to the Greengenes database using a 97% sequence identity threshold, and assigned a taxonomy (See this section for a `refresher on 16S data <http://cmi-workshop.readthedocs.io/en/latest/qiita-16S-processing.html>`__). This enables us to display this data to view the percentage of each taxa within each sample.
 
 When using "Deblurred" data, there is no taxa assignment since features are kept as individual error-corrected sequences, so if you are referencing this tutorial with your own deblurred data you can skip to the next section "Alpha Diversity Analysis".
 
-To display the taxonomic profiles of our samples, we will select our rarefied data artifact, and click "Process". The same processing view we saw previously now appears, so click on "Summarize taxa" from the drop-down menu to arrive at the following view:
+To display the taxonomic profiles of our samples, we will select our rarefied data artifact, and click "Process". The same processing view we saw previously now appears, so click on "Visualize taxonomy with an interactive bar plot" from the drop-down menu to arrive at the following view:
 
 .. figure::  images/taxa_barplot_parameter3.png
    :align:   center
@@ -136,7 +136,7 @@ Observed Operational Taxonomic Units
 
 One type of analysis for alpha diversity is looking at observed OTUs. This type of analysis will provide the number of unique OTUs found in a sample or group of samples.
 
-To perform an observed OTU alpha diversity analysis, select the rarefied "Rarefied table 11030 (BIOM)" artifact in the processing network and select "Process". Select "Calculate alpha diversity" from the drop-down menu. The parameters will appear below the workflow diagram:
+To perform an observed OTU alpha diversity analysis, select the rarefied "Rarefied table 11030 (BIOM)" artifact in the processing network and select "Process". Select "Alpha diversity" from the drop-down menu. The parameters will appear below the workflow diagram:
 
 .. figure::  images/observed_OTU_parameter3.png
    :align:   center
@@ -155,7 +155,7 @@ Shannon Diversity Index
 
 Another type of alpha diversity analysis is the Shannon diversity index. This analyzes the amount of taxa per the total amount of taxa. It takes into account both diversity as well as abundance.
 
-To perform an Shannon diversity index, select the rarefied "Rarefied table 11030 (BIOM)" artifact in the processing network and select "Process". Select "Calculate alpha diversity" from the drop-down menu. The parameters will appear below the workflow diagram:
+To perform an Shannon diversity index, select the rarefied "Rarefied table 11030 (BIOM)" artifact in the processing network and select "Process". Select "Alpha diversity" from the drop-down menu. The parameters will appear below the workflow diagram:
 
 .. figure::  images/shannon_diversity_parameter3.png
    :align:   center
@@ -174,7 +174,7 @@ Faith's Phylogenetic Diversity Index
 
 The final alpha diversity analysis is Faith’s phylogenetic diversity index. This index also measured abundance and diversity but displays it in tree form rather than in a plot.
 
-To perform a Faith's phylogenetic diversity index, select the rarefied "Rarefied table 11030 (BIOM)" artifact in the processing network and select "Process". Select "Calculate alpha diversity" from the drop-down menu. The parameters will appear below the workflow diagram:
+To perform a Faith's phylogenetic diversity index, select the rarefied "Rarefied table 11030 (BIOM)" artifact in the processing network and select "Process". Select "Alpha diversity (phylogenetic)" from the drop-down menu. The parameters will appear below the workflow diagram:
 
 .. figure::  images/faith_pd_parameter3.png
    :align:   center
@@ -216,7 +216,7 @@ Bray-Curtis Dissimilarity
 
 One way to analyze this is through Bray-Curtis dissimilarity. This quantifies how dissimilar samples are to one another.
 
-To perform a Bray-Curtis beta diversity analysis, select the rarefied "Rarefied table 11030 (BIOM)" artifact in the processing network and select "Process". Then select "Calculate beta diversity" from the drop-down menu. The parameters will appear below the workflow diagram:
+To perform a Bray-Curtis beta diversity analysis, select the rarefied "Rarefied table 11030 (BIOM)" artifact in the processing network and select "Process". Then select "Beta diversity" from the drop-down menu. The parameters will appear below the workflow diagram:
 
 .. figure::  images/bray_curtis_beta_diversity3.png
    :align:   center
@@ -242,7 +242,7 @@ Unweighted UniFrac Analysis
 
 Another tool for measuring beta diversity is unweighted UniFrac analysis. Unweighted beta diversity analysis is when the types but not quantity of each taxa is taken into consideration when comparing samples to one another. This differs from weighted analysis which takes into consideration both the amount and variety of taxa in a sample.
 
-To perform unweighted UniFrac analysis, select the rarefied "Rarefied table 11030 (BIOM)" artifact in the processing network and select "Process". Then select "Calculate beta diversity" from the drop-down menu. The parameters will appear below the workflow diagram:
+To perform unweighted UniFrac analysis, select the rarefied "Rarefied table 11030 (BIOM)" artifact in the processing network and select "Process". Then select "Beta diversity (phylogenetic)" from the drop-down menu. The parameters will appear below the workflow diagram:
 
 .. figure::  images/unweighted_beta_diversity3.png
    :align:   center
