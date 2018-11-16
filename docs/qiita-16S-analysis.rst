@@ -449,11 +449,11 @@ One of the most powerful aspects of Qiita is the ability to compare your data wi
 
 (You can get up-to-date statistics by clicking “Stats” under the “More Info” option on the top bar.)
 
-Creating a meta-analysis is just like creating an analysis, except you choose data objects from multiple studies. Let’s start creating a meta-analysis by adding our Closed Reference OTU table to a new analysis.
+Creating a meta-analysis is just like creating an analysis, except you choose data objects from multiple studies. Let’s start creating a meta-analysis by adding the Closed-Reference OTU table we generated in the *processing tutorial* to a new analysis. Select "Create new analysis" from the Analysis drop-down menu. Find the study you created for the *processing tutorial* under "Your studies", and click the green circle to show artifacts from that study. Select "Per artifact" to 
 
 Next, we’ll look for some additional data to compare against.
 
-You noticed the "Other Studies" table below "Your Studies" when adding data to the analysis. (Sometimes this takes a while to load - give it a few minutes.) These are publicly available data for you to explore, and each should have processed data suitable for comparison to your own.
+You noticed the "Other Studies" table below "Your Studies" when adding data to the analysis. (Sometimes this takes a while to load - please be patient.) These are publicly available data for you to explore, and each should have processed data suitable for comparison to your own.
 
 There are a couple tools provided to help you find useful public studies.
 
