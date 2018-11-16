@@ -442,18 +442,18 @@ In addition, by deblurred sequences in Qiita use a reduced threshold for sequenc
 Creating a Meta-Analysis
 ------------------------
 
-One of the most powerful aspects of Qiita is the ability to compare your data with hundreds of thousands of samples from across the planet. Right now, there are almost 270,000 samples publicly available for you to explore:
+One of the most powerful aspects of Qiita is the ability to compare your data with hundreds of thousands of samples from across the planet. Right now, there are over 230,000 samples publicly available for you to explore:
 
-.. figure::  images/world_map_data.png
+.. figure::  images/world_map_data2.png
    :align:   center
 
 (You can get up-to-date statistics by clicking “Stats” under the “More Info” option on the top bar.)
 
-Creating a meta-analysis is just like creating an analysis, except you choose data objects from multiple studies. Let’s start creating a meta-analysis by adding the Closed-Reference OTU table we generated in the *processing tutorial* to a new analysis. Select "Create new analysis" from the Analysis drop-down menu. Find the study you created for the *processing tutorial* under "Your studies", and click the green circle to show artifacts from that study. Select "Per artifact" to 
+Creating a meta-analysis is just like creating an analysis, except you choose data objects from multiple studies. Let’s start creating a meta-analysis by adding the Closed-Reference OTU table we generated in the *processing tutorial* to a new analysis. Select "Create new analysis" from the Analysis drop-down menu. Find the study you created for the *processing tutorial* under "Your studies", and click the green circle to show artifacts from that study. There should be three artifacts, one "Pick closed-reference OTUs" and two "Deblur" feature-tables. Select "Per artifact" for the "Pick closed-reference OTUs" to expand the list of artifacts associated - in our case there is only one. Select "Add" to add this feature-table to our meta-analysis.
 
 Next, we’ll look for some additional data to compare against.
 
-You noticed the "Other Studies" table below "Your Studies" when adding data to the analysis. (Sometimes this takes a while to load - please be patient.) These are publicly available data for you to explore, and each should have processed data suitable for comparison to your own.
+You noticed the "Other Studies" table below "Your Studies" when adding data to the analysis. (Sometimes this takes a while to load - please be patient.) These are publicly available data for you to explore, and each should have processed data suitable for comparison to your own (i.e., same trim length and method for calling features, etc.).
 
 There are a couple tools provided to help you find useful public studies.
 
@@ -469,19 +469,21 @@ Second, there is a search field that allows you to filter studies in real time. 
 .. figure::  images/filter_results_for_meta_analysis.png
    :align:   center
 
-Let’s try comparing our data to the “Global Gut” dataset of human microbiomes from the US, Africa, and South America from the study `“Human gut microbiome viewed across age and geography” by Yatsunenko et al <http://www.nature.com/nature/journal/v486/n7402/abs/nature11053.html>`__. We can search for this dataset using the DOI from the paper: 10.1038/nature11053.
+Let’s try comparing our data (i.e., from 14 human skin samples) to the “Global Gut” dataset of human microbiomes from the US, Africa, and South America from the study `“Human gut microbiome viewed across age and geography” by Yatsunenko et al <http://www.nature.com/nature/journal/v486/n7402/abs/nature11053.html>`__. We can search for this dataset using the DOI from the paper: 10.1038/nature11053. Once the study appears, click the green circle as above to view the artifacts from that study; there should be several. Select "Per artifact" for the table that was processed the same way as yours above - "Pick closed-reference OTUs... Trimming (length:100)". 
 
-.. figure::  images/data_comparison.png
+.. figure::  images/data_comparison2.png
    :align:   center
 
 Add the closed reference OTU table from this study to your analysis. You should now be able to click the green analysis icon in the upper right and see both your own OTU table and the public study OTU table in your analysis staging area:
 
-You can now click “Create Analysis” just as before to begin specifying analysis steps. This time, let’s just do the beta diversity step. Select the Beta Diversity command, enter a rarefaction depth of 11030, and click “Start Processing”.
+You can now click “Create Analysis” just as before to begin specifying analysis steps. This time, let’s jump straight to calculating beta diversity. To try something new, rather than rarefy prior to calculating beta diversity as above, we can do it simultaneously and using an iterative rarefaction process as to get a better estimate of real differences among samples. Select "Beta diversity rarefaction" from the drop-down menu. We will only change a few of the parameters: Then select the "/database/gg/13_8/trees/97_otus_no_none.tree" for the "Phylogenetic tree". In the field, "The beta diversity metric... (metric)", select "Unweighted UniFrac". Finally, for "The total frequecy that each sample should be rarefied to... (sampling depth)", enter a rarefaction depth of 2118 - the observed minimum number of features in your *processing tutorial* data. Then click “Add command", and "Run".
 
 .. figure::  images/sample_comparisons.png
    :align:   center
 
-Because you’ve now expanded the number of samples in your analysis by more than an order of magnitude, this step will take a little longer to complete. But when it does, you will be able to use Emperor to explore the samples in your test dataset to samples from around the world!
+Because you’ve now expanded the number of samples in your analysis by more than an order of magnitude, this step will take a little longer to complete. But when it does, a PCoA ordination plot will be generated immediately and you will be able to use Emperor to explore the samples in your test dataset to samples from around the world!
 
-.. figure::  images/pcoa_sample_comparison.png
+.. figure::  images/pcoa_sample_comparison2.png
    :align:   center
+   
+Note that in this plot, each sample point has a cloud that represents the iterative rarefaction process in this analysis. When samples are colored by the metadata variable "geo_loc_name" you can see that the "unknown" or human skin samples from our *processing tutorial* fall to one end of the distribution of gut samples from the larger Yatsunenko study.
