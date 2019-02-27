@@ -36,6 +36,12 @@ Qiita tutorials:
 .. toctree::
    :caption: Metabolomic analyses
    :maxdepth: 2
+   
+   qiita-shotgun-metagenomic-analysis
+   
+.. toctree::
+   :caption: Shotgun metagenomics analysis
+   :maxdepth: 2
 
    metabolomics_notes
    metabolomics_mzmine2
