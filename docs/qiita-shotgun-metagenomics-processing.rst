@@ -37,7 +37,7 @@ We will now process the sequence data using Shogun to create taxa-abundance tabl
 
 Running Shogun on human-filtered per-sample FASTQ data
 ------------------------------------------------------
-All shotgun metagenomic data is filtered of human reads prior to being uploaded to Qiita. To process the data using Shogun, click on the per-sample FASTQ artifact named 'Shotgun data' and click 'Process'
+All shotgun metagenomic data is filtered of human reads prior to being uploaded to Qiita. To process the data using Shogun, click on the per-sample FASTQ artifact named 'Shotgun data' and click 'Process'.
 
 .. figure::  images/shotgun-process-shogun1.png
    :align:   center
@@ -52,7 +52,7 @@ Change the 'Parameter set' to 'rep82_utree' and click 'Add Command'.
 .. figure::  images/shotgun-process-shogun3.png
    :align:   center
    
-You should see the command added to the processing network
+You should see the command added to the processing network:
 
 .. figure::  images/shotgun-process-shogun4.png
    :align:   center
@@ -73,4 +73,3 @@ Examine the table summary to see the number of samples that were retained, and h
    :align:   center
    
 In the next section we will begin an analysis starting with this feature-table.
-   
