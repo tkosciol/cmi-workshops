@@ -1,4 +1,4 @@
-Shotgun metagenomics is an alternative approach to amplicon sequencing, and provides information at the genomic level, rather than only for single loci such as 16S, ITS, or 18S. In addition to potentially providing finer resolution with respect to taxonomic classification, metagenomics provides functional data that allows for more comprehensive analyses of microbial communities. We are currently working to make available additional metagenomic tools in Qiita. Below we describe how to use Shogun to produce taxonomic profiles for shotgun metagenomic data, as well as common analyses of alpha- and beta-diversity.
+Shotgun metagenomics is an alternative approach to amplicon sequencing that provides information at the genomic level, rather than for single loci such as 16S, 18S, and the fungal ITS region. In addition to providing finer resolution with respect to taxonomic classification, metagenomics provides functional data that allows for more comprehensive analyses of microbial communities. We are currently working to make available additional metagenomic tools in Qiita. Below we describe how to use Shogun to produce taxonomic profiles for shotgun metagenomic data, as well as common downstream analyses of alpha- and beta-diversity.
 
 Processing Shotgun Metagenomics Data
 ------------------------------------
@@ -18,22 +18,22 @@ Once the files are uploaded, click on 'Sample Information' on the left side of t
 .. figure::  images/shotgun-process-sample-info.png
    :align:   center
 
-Once complete, click 'Add New Preparation'. Give the preparation a name, select the prep info file, 'CMI_shotgun-metagenomics_tutorial_prep_info', and select 'Metagenomic' in both of the drop-down menus. Click 'Create New Preparation'.
+Once complete, click 'Add New Preparation'. Give the preparation a name of your choosing, select the prep info file, 'CMI_shotgun-metagenomics_tutorial_prep_info', and select 'Metagenomic' in both of the drop-down menus. Then click 'Create New Preparation'.
 
 .. figure::  images/shotgun-process-prep-info.png
    :align:   center
 
-This will create a new preparation under 'Data Types'. Click on the new preparation and then the prep ID. Select 'per_sample_FASTQ - None', and give the files a name. Then click 'Add Files'.
+This will create a new preparation under 'Data Types'. Click on the new preparation and then the prep ID text. This will open up options for which you should select 'per_sample_FASTQ - None', and give the files a name. Then click 'Add Files'.
 
 .. figure::  images/shotgun-process-add-files.png
    :align:   center
    
-Once your files are added, you should see a processing network with an artifact representing the sequence data.
+Once your sequence files are added, you should see a processing network with an artifact representing the sequence data.
 
 .. figure::  images/shotgun-process-network.png
    :align:   center
    
-We will now process the sequence data using Shogun to create taxa-abundance tables at three hierarchical levels: phylum, family, and genus. Shogun is a metagenomic tool for assigning binned sequence reads to metagenomes, and assigning taxonomy using a reference database. In Qiita, Shogun uses either utree or bowtie2 to align to references.
+We will now process the sequence data using Shogun to create taxa-abundance tables at three hierarchical levels: phylum, family, and genus. Shogun is a metagenomic tool for assigning sequence reads to metagenomes, and taxonomic classification using a reference database. In Qiita, Shogun uses either **utree** or **bowtie2** to align to references.
 
 Running Shogun on human-filtered per-sample FASTQ data
 ------------------------------------------------------
@@ -67,7 +67,7 @@ Once the command has completed, click on the 'Taxonomic Predictions - species' a
 .. figure::  images/shotgun-process-shogun6.png
    :align:   center
    
-Examine the table summary to see the number of samples that were retained, and how many features were assembled.
+Examine the table summary to see the number of samples that were retained, and the number of features that were assembled.
 
 .. figure::  images/shotgun-process-taxa-species.png
    :align:   center
