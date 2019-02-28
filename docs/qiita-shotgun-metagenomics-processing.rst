@@ -10,10 +10,10 @@ We will start by creating a new study with shotgun metagenomic data for 23 human
    
 Once the study has been created, click on the study name in the green banner to go to the study page. Click on 'Upload Files', and upload the contents of the zip file 'qiita-shotgun-metagenomics-data.zip' found at the link below.
 
+https://github.com/biocore/cmi-workshops/tree/master/docs/example_data
+
 .. figure::  images/shotgun-process-upload.png
    :align:   center
-
-https://github.com/biocore/cmi-workshops/tree/master/docs/example_data
 
 Once the files are uploaded, click on 'Sample Information' on the left side of the screen and select the sample information file '10768_20180418-105647.txt' and click 'Create'.
 
