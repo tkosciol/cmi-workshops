@@ -1,3 +1,5 @@
+Shotgun metagenomics is an alternative approach to amplicon sequencing, and provides information at the genomic level, rather than only for single loci such as 16S, ITS, or 18S. In addition to potentially providing finer resolution with respect to taxonomic classification, metagenomics provides functional data that allows for more comprehensive analyses of microbial communities. We are currently working to make available additional metagenomic tools in Qiita. Below we describe how to use Shogun to produce taxonomic profiles for shotgun metagenomic data, as well as common analyses of alpha- and beta-diversity.
+
 Processing Shotgun Metagenomics Data
 ------------------------------------
 
