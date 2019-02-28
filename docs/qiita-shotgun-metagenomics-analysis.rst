@@ -51,4 +51,16 @@ Let's add some additional commands before running our job. Select the species-le
 .. figure::  images/shotgun-analysis-core2.png
    :align:   center
    
-Now we are ready to run the analysis. Click 'Run' above the processing network.
+Now we are ready to run the analysis. Click 'Run' above the processing network. Once the analyses are complete, you can explore the taxonomy barplots and emperor visualizations of principle coordinates analyses of beta-diversity, as well as perform additional analyses such as alpha correlation or comparisons.
+
+.. figure::  images/shotgun-analysis-core3.png
+   :align:   center
+   
+.. figure::  images/shotgun-analysis-taxonomy.png
+   :align:   center
+   
+.. figure::  images/shotgun-analysis-bray-curtis-pcoa.png
+   :align:   center
+
+.. figure::  images/shotgun-analysis-core3.png
+   :align:   center
