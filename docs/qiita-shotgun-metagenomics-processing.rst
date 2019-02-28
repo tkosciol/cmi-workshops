@@ -13,12 +13,12 @@ Once the study has been created, click on the study name in the green banner to 
 .. figure::  images/shotgun-process-upload.png
    :align:   center
 
-Once the files are uploaded, click on 'Sample Information' on the left side of the screen and select the sample information file '10768_20180418-105647.txt' and click 'Create'.
+Once the files are uploaded, click on 'Sample Information' on the left side of the screen and select the sample information file 'CMI_shotgun-metagenomics_tutorial_sample_info.txt' and click 'Create'.
 
 .. figure::  images/shotgun-process-sample-info.png
    :align:   center
 
-Once complete, click 'Add New Preparation'. Give the preparation a name, select the prep info file that you uploaded, and select 'Metagenomic' in both of the drop-down menus. Click 'Create New Preparation'.
+Once complete, click 'Add New Preparation'. Give the preparation a name, select the prep info file, 'CMI_shotgun-metagenomics_tutorial_prep_info', and select 'Metagenomic' in both of the drop-down menus. Click 'Create New Preparation'.
 
 .. figure::  images/shotgun-process-prep-info.png
    :align:   center
