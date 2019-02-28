@@ -61,6 +61,3 @@ Now we are ready to run the analysis. Click 'Run' above the processing network. 
    
 .. figure::  images/shotgun-analysis-bray-curtis-pcoa.png
    :align:   center
-
-.. figure::  images/shotgun-analysis-core3.png
-   :align:   center
