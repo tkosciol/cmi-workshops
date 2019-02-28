@@ -74,5 +74,5 @@ Examine the table summary to see the number of samples that were retained, and h
 .. figure::  images/shotgun-process-taxa-species.png
    :align:   center
    
-   
+In the next section we will begin an analysis starting with this feature-table.
    
